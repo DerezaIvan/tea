@@ -1,0 +1,44 @@
+.main {
+  padding: 72px 0;
+}
+
+.main-info-item.discount {
+  background-image: url(../../../assets/image/1-1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 192px 120px;
+}
+
+.main-info-text {
+  padding-top: 70px;
+}
+
+.main-info-item button {
+  margin-top: 70px;
+}
+
+.main-info-item.order .main-info-title {
+  padding: 208px 0 0 122px;
+  max-width: 584px;
+}
+
+.main-info-item.order button {
+  margin-left: 122px;
+}
+
+.main-info-item.new {
+  background-image: url(../../../assets/image/1-3.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 208px 120px;
+}
+
+.main-info-item.new .main-info-title {
+  max-width: 500px;
+}
+
+.accordion-button:focus,
+.accordion-button:not(.collapsed) {
+  background-color: #448eff;
+  box-shadow: none;
+}

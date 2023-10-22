@@ -1,0 +1,16 @@
+<div class="card col-3 w-100 text-center" *ngIf="product">
+  <img src="{{ product.image }}" class="card-img-top w-50 mx-auto" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title fw-bold">{{ product.title }}</h5>
+    <p class="card-text w-75 mx-auto mt-4">
+      {{ product.description }}
+    </p>
+    <p class="card-price">Цена: {{ product.price }} руб.</p>
+    <a
+      class="btn btn-primary"
+      routerLink="/order"
+      (click)="addToCart(product.title)"
+      >Купить</a
+    >
+  </div>
+</div>

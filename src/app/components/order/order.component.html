@@ -1,0 +1,235 @@
+<section class="make-an-order" id="make-an-order">
+  <div class="container-lg">
+    <h2
+      class="make-an-order-title text-center fw-bold fs-2 mb-5 lh-base text-black"
+    >
+      Сделать заказ
+    </h2>
+    <form
+      id="form"
+      class="row g-3 needs-validation wow bounceInDown"
+      [formGroup]="checkoutForm"
+      novalidate
+    >
+      <div class="col-md-4">
+        <label for="name" class="form-label">Имя</label>
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          id="name"
+          formControlName="name"
+        />
+        <div
+          *ngIf="
+            checkoutForm.get('name')?.invalid &&
+            (checkoutForm.get('name')?.touched ||
+              checkoutForm.get('name')?.dirty)
+          "
+        >
+          <div
+            class="invalid-feedback"
+            *ngIf="checkoutForm.get('name')?.errors?.['required']"
+          >
+            Введите своё имя
+          </div>
+          <div
+            class="invalid-feedback"
+            *ngIf="checkoutForm.get('name')?.errors?.['pattern']"
+          >
+            Имя может содержать только русские буквы
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="last_name" class="form-label">Фамилия</label>
+        <input
+          type="text"
+          class="form-control"
+          name="last_name"
+          id="last_name"
+          formControlName="last_name"
+        />
+
+        <div
+          *ngIf="
+            checkoutForm.get('last_name')?.invalid &&
+            (checkoutForm.get('last_name')?.touched ||
+              checkoutForm.get('last_name')?.dirty)
+          "
+        >
+          <div
+            class="invalid-feedback"
+            *ngIf="checkoutForm.get('last_name')?.errors?.['required']"
+          >
+            Введите свою фамилию
+          </div>
+          <div
+            class="invalid-feedback"
+            *ngIf="checkoutForm.get('last_name')?.errors?.['pattern']"
+          >
+            Фамилия может содержать только русские буквы
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="phone" class="form-label">Телефон</label>
+        <input
+          type="text"
+          class="form-control"
+          name="phone"
+          id="phone"
+          required
+          formControlName="phone"
+        />
+        <div
+          *ngIf="
+            checkoutForm.get('phone')?.invalid &&
+            (checkoutForm.get('phone')?.touched ||
+              checkoutForm.get('phone')?.dirty)
+          "
+        >
+          <div
+            class="invalid-feedback"
+            *ngIf="checkoutForm.get('phone')?.errors?.['required']"
+          >
+            Введите свой номер телефона
+          </div>
+          <div
+            class="invalid-feedback"
+            *ngIf="checkoutForm.get('phone')?.errors?.['pattern']"
+          >
+            Номер телефона может содержать только цифры и знак +
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="country" class="form-label">Страна</label>
+        <input
+          type="text"
+          class="form-control"
+          name="country"
+          id="country"
+          required
+          formControlName="country"
+        />
+        <div
+          *ngIf="
+            checkoutForm.get('country')?.invalid &&
+            (checkoutForm.get('country')?.touched ||
+              checkoutForm.get('country')?.dirty)
+          "
+        >
+          <div
+            class="invalid-feedback"
+            *ngIf="checkoutForm.get('country')?.errors?.['required']"
+          >
+            Введите страну
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="zip" class="form-label">Индекс</label>
+        <input
+          type="text"
+          class="form-control"
+          name="zip"
+          id="zip"
+          required
+          formControlName="zip"
+        />
+        <div
+          *ngIf="
+            checkoutForm.get('zip')?.invalid &&
+            (checkoutForm.get('zip')?.touched || checkoutForm.get('zip')?.dirty)
+          "
+        >
+          <div
+            class="invalid-feedback"
+            *ngIf="checkoutForm.get('zip')?.errors?.['required']"
+          >
+            Введите индекс
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <label for="address" class="form-label">Адрес</label>
+        <input
+          type="text"
+          class="form-control"
+          name="address"
+          id="address"
+          required
+          formControlName="address"
+        />
+        <div
+          *ngIf="
+            checkoutForm.get('address')?.invalid &&
+            (checkoutForm.get('address')?.touched ||
+              checkoutForm.get('address')?.dirty)
+          "
+        >
+          <div
+            class="invalid-feedback"
+            *ngIf="checkoutForm.get('address')?.errors?.['required']"
+          >
+            Введите свой адресс
+          </div>
+          <div
+            class="invalid-feedback"
+            *ngIf="checkoutForm.get('address')?.errors?.['pattern']"
+          >
+            Номер телефона может содержать только буквы, цифры, пробелы, дефис и
+            слеш
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="product" class="form-label">Товар</label>
+        <input
+          type="text"
+          class="form-control"
+          name="product"
+          id="product"
+          formControlName="product"
+          required
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="comment" class="form-label">Коментарии к заказу</label>
+        <input
+          type="text"
+          class="form-control"
+          name="comment"
+          id="comment"
+          formControlName="comment"
+          placeholder="Вы можете дополнить заказ комментарием"
+        />
+        <div
+          *ngIf="
+            checkoutForm.get('comment')?.invalid &&
+            (checkoutForm.get('comment')?.touched ||
+              checkoutForm.get('comment')?.dirty)
+          "
+        >
+          <div
+            class="invalid-feedback"
+            *ngIf="checkoutForm.get('comment')?.errors?.['pattern']"
+          >
+            Поле комментарии может содержать только буквы и цифры
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <a
+          href="#test-popup"
+          class="btn hvr-shutter-out-vertical btn-primary mt-lg-3 open-popup-link"
+          type="submit"
+          id="btn-form"
+          (click)="onSubmit($event)"
+          >Отправить</a
+        >
+      </div>
+    </form>
+  </div>
+</section>
